@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090c0f">
+  <meta name="description" content="Thales Victor — desenvolvedor Android, Linux e sistemas de baixo nível. Criador da DeathUI e colaborador no ecossistema Exynos 1480.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thales Victor — Android & Systems Developer">
+  <meta property="og:description" content="Desenvolvimento Android, custom ROMs e sistemas de baixo nível para dispositivos Samsung Exynos.">
+  <meta property="og:image" content="https://deaththoughts.github.io/og-image.png">
+  <meta property="og:url" content="https://deaththoughts.github.io/">
+  <title>Thales Victor — Android & Systems Developer</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090c0f;
+      --panel: #101519;
+      --text: #e8ece8;
+      --muted: #929d9a;
+      --accent: #9cf56b;
+      --line: #29332f;
+      --tag-text: #dce6dc;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at 78% 0%, #9cf56b0b, transparent 34%), var(--bg);
+      color: var(--text);
+      font: 16px/1.65 Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { opacity: .82; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    .wrap { width: min(1060px, calc(100% - 40px)); margin: 0 auto; }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:18px; padding:20px 0; border-bottom:1px solid var(--line); }
+    .brand { color:var(--text); font:850 1rem ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing:.08em; }
+    .brand span, .eyebrow, .num, .label { color:var(--accent); }
+    .navlinks { display:flex; flex-wrap:wrap; gap:20px; color:var(--muted); font-size:.9rem; }
+    .hero { max-width:880px; padding:100px 0 82px; border-bottom:1px solid var(--line); }
+    .eyebrow, .label, .num { font-family:ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .eyebrow { font-size:.78rem; letter-spacing:.15em; text-transform:uppercase; font-weight:700; }
+    h1 { font-size:clamp(3rem, 8vw, 6.3rem); line-height:.94; letter-spacing:-.075em; margin:18px 0 24px; }
+    h1 em { color:var(--accent); font-style:normal; }
+    .hero p { max-width:680px; color:var(--muted); font-size:1.12rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:11px; margin-top:28px; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:10px 15px; border:1px solid var(--line); color:var(--text); font-weight:650; border-radius:3px; transition:transform .2s, border-color .2s, background .2s; }
+    .btn:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .btn.primary { background:var(--accent); color:#10150e; border-color:var(--accent); }
+    section { padding:55px 0; border-bottom:1px solid var(--line); }
+    .sectionhead { display:flex; align-items:baseline; gap:14px; margin-bottom:22px; }
+    .num { font-size:.9rem; }
+    h2 { font-size:1.5rem; letter-spacing:-.04em; margin:0; }
+    h3 { margin:9px 0 8px; font-size:1.12rem; }
+    p { margin-top:0; }
+    .muted { color:var(--muted); }
+    .about { display:grid; grid-template-columns:1.2fr .8fr; gap:38px; }
+    .about-copy { border-left:2px solid var(--accent); padding-left:19px; }
+    .skill-groups { display:grid; gap:16px; }
+    .skill-title { color:var(--muted); font-size:.82rem; text-transform:uppercase; letter-spacing:.1em; margin-bottom:9px; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .tag { border:1px solid var(--line); padding:5px 9px; color:var(--tag-text); font-size:.87rem; border-radius:2px; }
+    .cards { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .card { background:linear-gradient(145deg, #101612, #0c1010); border:1px solid var(--line); padding:22px; border-radius:3px; min-width:0; }
+    .card p { color:var(--muted); margin-bottom:0; }
+    .label { font-size:.74rem; letter-spacing:.09em; text-transform:uppercase; }
+    .project-meta { margin-top:16px; }
+    .project-meta .tags { margin-top:7px; }
+    .project-links { display:flex; flex-wrap:wrap; gap:9px; margin-top:19px; }
+    .project-links .btn { font-size:.9rem; padding:8px 11px; }
+    .timeline { display:grid; gap:14px; }
+    .role { padding:18px 20px; border-left:2px solid var(--line); background:#ffffff03; }
+    .role .period { color:var(--accent); font: .78rem ui-monospace, monospace; }
+    .role h3 { margin:5px 0; }
+    .contact { border:1px solid var(--line); border-left:2px solid var(--accent); padding:25px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .contact p { color:var(--muted); margin:5px 0 0; }
+    footer { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:25px 0 35px; color:var(--muted); font-size:.85rem; }
+    .js .reveal { opacity:0; transform:translateY(16px); transition:opacity .65s ease, transform .65s ease; }
+    .js .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (max-width:700px) {
+      .nav { align-items:flex-start; flex-direction:column; }
+      .navlinks { gap:12px 16px; }
+      .hero { padding:76px 0 60px; }
+      .about, .cards { grid-template-columns:1fr; }
+      .contact { align-items:flex-start; flex-direction:column; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *, *::before, *::after { scroll-behavior:auto!important; animation-duration:.01ms!important; transition-duration:.01ms!important; }
+      .js .reveal { opacity:1; transform:none; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#top" aria-label="Voltar ao início">TV<span>.</span></a>
+    <nav class="navlinks" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a><a href="#stack">Stack</a><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <div class="hero">
+      <div class="eyebrow">Android · Linux · sistemas de baixo nível</div>
+      <h1>Entendendo sistemas<br>por <em>dentro.</em></h1>
+      <p>Sou Thales Victor, desenvolvedor com foco em Android, custom ROMs e manutenção de software para dispositivos Samsung Exynos. Criei a DeathUI para o Galaxy A55 e participo do desenvolvimento comunitário que mantém esses dispositivos relevantes além do suporte oficial.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projetos">Explorar projetos ↘</a>
+        <a class="btn" href="https://github.com/DeathThoughts" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="btn" href="curriculo.pdf" target="_blank" rel="noreferrer">Currículo PDF ↗</a>
+        <a class="btn" href="https://profile.indeed.com" target="_blank" rel="noreferrer">Indeed ↗</a>
+        <a class="btn" href="mailto:thalesvictorbarbosadesales@gmail.com">E-mail ↗</a>
+      </div>
+    </div>
+
+    <section id="sobre" class="reveal">
+      <div class="sectionhead"><span class="num">01 /</span><h2>Sobre mim</h2></div>
+      <div class="about">
+        <div class="about-copy">
+          <p>Minha experiência é principalmente prática e autodidata: desenvolvimento Android, adaptação de firmware e trabalho com os componentes que permitem compilar e executar sistemas alternativos.</p>
+          <p class="muted">Na DeathUI, sou o criador e principal desenvolvedor da ROM. Outros colaboradores contribuíram com componentes e ferramentas como kernel, root e TWRP; essas contribuições são reconhecidas nos respectivos projetos.</p>
+        </div>
+        <div id="stack" class="skill-groups">
+          <div><div class="skill-title">Linguagens</div><div class="tags"><span class="tag">Python</span><span class="tag">C</span><span class="tag">C++</span><span class="tag">C#</span><span class="tag">Lua</span><span class="tag">Shell</span><span class="tag">HTML / CSS</span></div></div>
+          <div><div class="skill-title">Plataformas e ferramentas</div><div class="tags"><span class="tag">Linux</span><span class="tag">Git</span><span class="tag">AOSP</span><span class="tag">Android</span><span class="tag">Kernel</span><span class="tag">Device tree</span><span class="tag">SELinux</span><span class="tag">PostgreSQL</span><span class="tag">Next.js</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="reveal">
+      <div class="sectionhead"><span class="num">02 /</span><h2>Projetos em destaque</h2></div>
+      <div class="cards">
+        <article class="card">
+          <div class="label">Projeto autoral · Android</div>
+          <h3>DeathUI 8 Elite V7 — The Final Chapter</h3>
+          <p>Sou o criador e principal desenvolvedor deste port não oficial de One UI 8 / Android 16 para o Galaxy A55, baseado no firmware do Galaxy S25 FE. O projeto reúne adaptação de software Samsung para outro dispositivo e colaboração com pessoas responsáveis por componentes de suporte, incluindo kernel, root e TWRP.</p>
+          <div class="project-meta"><div class="skill-title">Tecnologias / áreas</div><div class="tags"><span class="tag">Android 16</span><span class="tag">One UI 8</span><span class="tag">Firmware porting</span><span class="tag">Galaxy A55</span></div></div>
+          <div class="project-stats" aria-label="Métricas do tópico no XDA"><div><strong>22.000</strong><span>visualizações</span></div><div><strong>144</strong><span>respostas</span></div></div>
+          <p class="muted" style="font-size:.82rem;margin-top:10px">Downloads distribuídos via Google Drive; o total não está disponível para verificação.</p>
+          <div class="project-links"><a class="btn primary" href="https://xdaforums.com/t/rom-unofficial-a55-deathui-8-elite-v7-the-final-chapter-one-ui-8-0-android-16.4774652/" target="_blank" rel="noreferrer">Ver release no XDA ↗</a></div>
+        </article>
+        <article class="card">
+          <div class="label">Projeto autoral · Android</div>
+          <h3>DeathUI 7.0 Elite</h3>
+          <p>Port não oficial de One UI 7 / Android 15 para o Galaxy A55, baseado no firmware do Galaxy S24 FE. A ROM busca adaptar a experiência de software de um aparelho mais recente ao A55. Componentes de suporte foram desenvolvidos em colaboração com outros membros da comunidade.</p>
+          <div class="project-meta"><div class="skill-title">Tecnologias / áreas</div><div class="tags"><span class="tag">Android 15</span><span class="tag">One UI 7</span><span class="tag">Firmware porting</span><span class="tag">Galaxy A55</span></div></div>
+          <div class="project-stats" aria-label="Métricas do tópico no XDA"><div><strong>2.000</strong><span>visualizações</span></div></div>
+          <p class="muted" style="font-size:.82rem;margin-top:10px">Downloads distribuídos via Google Drive; o total não está disponível para verificação.</p>
+          <div class="project-links"><a class="btn primary" href="https://xdaforums.com/t/rom-unofficial-a55-deathui-7-0-elite-one-ui-7-0-android-15.4775126/" target="_blank" rel="noreferrer">Ver release no XDA ↗</a></div>
+        </article>
+        <article class="card">
+          <div class="label">Comunidade · Open source</div>
+          <h3>Exynos 1480 Devs</h3>
+          <p>Sou owner da organização dedicada ao desenvolvimento e à preservação do suporte comunitário para o Galaxy A55 e outros dispositivos com Exynos. O trabalho público da organização inclui repositórios de kernel, device tree e vendor usados como base para desenvolvimento Android.</p>
+          <div class="project-meta"><div class="skill-title">Tecnologias / áreas</div><div class="tags"><span class="tag">Linux</span><span class="tag">Kernel</span><span class="tag">Device tree</span><span class="tag">Vendor</span><span class="tag">Git</span></div></div>
+          <div class="project-links"><a class="btn primary" href="https://github.com/exynos1480" target="_blank" rel="noreferrer">Ver organização ↗</a><a class="btn" href="https://github.com/exynos1480/android_kernel_samsung_a55x" target="_blank" rel="noreferrer">Kernel A55 ↗</a></div>
+        </article>
+        <article class="card">
+          <div class="label">Infraestrutura Android</div>
+          <h3>Galaxy A55 5G — plataforma</h3>
+          <p>Repositórios públicos para a infraestrutura de desenvolvimento do A55. O device tree descreve a configuração específica do dispositivo; o vendor reúne componentes proprietários necessários para compilações compatíveis. Os repositórios são trabalho colaborativo da organização.</p>
+          <div class="project-meta"><div class="skill-title">Tecnologias / áreas</div><div class="tags"><span class="tag">Android</span><span class="tag">Device tree</span><span class="tag">Vendor blobs</span><span class="tag">SELinux</span></div></div>
+          <div class="project-links"><a class="btn" href="https://github.com/exynos1480/android_device_samsung_a55x" target="_blank" rel="noreferrer">Device tree ↗</a><a class="btn" href="https://github.com/exynos1480/proprietary_vendor_samsung_a55x" target="_blank" rel="noreferrer">Vendor ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experiencia" class="reveal">
+      <div class="sectionhead"><span class="num">03 /</span><h2>Experiência</h2></div>
+      <div class="timeline">
+        <article class="role"><div class="period">2019 — atual</div><h3>Desenvolvimento independente</h3><p class="muted">Estudo e desenvolvimento prático em programação, Android, sistemas Linux e projetos de software. As contribuições e releases públicos estão ligados na seção de projetos.</p></article>
+        <article class="role"><div class="period">Mar 2025 — Out 2025</div><h3>BULLPAY · Gerente de Contas</h3><p class="muted">Experiência profissional em acompanhamento de contas e comunicação com clientes. Essas atividades também desenvolvem competências transferíveis para tecnologia, como levantamento de necessidades, organização de demandas e comunicação de problemas — sem substituir experiência técnica formal.</p></article>
+      </div>
+    </section>
+
+    <section id="contato" class="reveal">
+      <div class="sectionhead"><span class="num">04 /</span><h2>Contato</h2></div>
+      <div class="contact"><div><strong>Quer conversar sobre Android, sistemas ou uma oportunidade?</strong><p>Entre em contato por e-mail ou confira os projetos públicos.</p></div><div class="actions" style="margin-top:0"><a class="btn primary" href="mailto:thalesvictorbarbosadesales@gmail.com">Enviar e-mail ↗</a><a class="btn" href="curriculo.pdf" target="_blank" rel="noreferrer">Currículo PDF ↗</a><a class="btn" href="https://profile.indeed.com" target="_blank" rel="noreferrer">Indeed ↗</a><a class="btn" href="https://github.com/DeathThoughts" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+      <p class="muted" style="font-size:.88rem;margin-top:14px">LinkedIn e currículo em PDF podem ser adicionados quando o link do perfil e a versão final do currículo estiverem prontos.</p>
+    </section>
+  </main>
+  <footer class="wrap"><span>© 2026 Thales Victor Barbosa de Sales</span><span>HTML + CSS + JavaScript · GitHub Pages</span></footer>
+  <script>
+    (() => {
+      const sections = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        sections.forEach(section => observer.observe(section));
+      } else {
+        sections.forEach(section => section.classList.add('visible'));
+      }
+    })();
+  </script>
+</body>
+</html>
